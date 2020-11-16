@@ -8,3 +8,12 @@ form.addEventListener('submit',(e)=>{
     list.innerHTML += `<li>${item.value}</li>`;
     item.value ='';
 })
+
+// remove element
+list.addEventListener('click', (e)=>{
+    if (e.target.classList.contains('checked')) {
+        e.target.remove();
+    } else{
+        e.target.classList.add('checked');
+    }
+})
