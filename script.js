@@ -6,6 +6,7 @@ const item = document.getElementById('item');
 form.addEventListener('submit',(e)=>{
     e.preventDefault();
     list.innerHTML += `<li>${item.value}</li>`;
+    storage();
     item.value ='';
 })
 
@@ -16,4 +17,10 @@ list.addEventListener('click', (e)=>{
     } else{
         e.target.classList.add('checked');
     }
+    storage();
 })
+
+// storage part
+function storage() {
+    window.localStorage.todoList = list.innerHTML;
+}
